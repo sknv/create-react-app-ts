@@ -1,20 +1,18 @@
 import * as React from 'react'
 import { Redirect, Route, RouteComponentProps, RouteProps } from 'react-router-dom'
 
-interface IProtectedRouteProps extends RouteProps {
-  redirectTo: string
-}
+type Redirector = () => string
 
-function isUserLoggedIn() {
-  return true
+interface IProtectedRouteProps extends RouteProps {
+  redirector: Redirector
 }
 
 export default function ProtectedRoute({
   component,
-  redirectTo,
+  redirector,
   ...props
 }: IProtectedRouteProps) {
-  return <Route {...props} render={renderOrRedirect(component, redirectTo)} />
+  return <Route {...props} render={renderOrRedirect(component, redirector)} />
 }
 
 // ----------------------------------------------------------------------------
@@ -23,17 +21,17 @@ export default function ProtectedRoute({
 
 type Renderer = (props: RouteComponentProps<any>) => React.ReactNode
 
-function renderOrRedirect(Component: any, redirectTo: string): Renderer {
-  return props => {
-    return isUserLoggedIn() ? (
-      <Component {...props} />
-    ) : (
+function renderOrRedirect(Component: any, redirector: Redirector): Renderer {
+  const redirectTo = redirector()
+  return props =>
+    redirectTo ? (
       <Redirect
         to={{
           pathname: redirectTo,
           state: { from: props.location }
         }}
       />
+    ) : (
+      <Component {...props} />
     )
-  }
 }
