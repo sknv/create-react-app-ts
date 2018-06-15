@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Compiled css files.
-/src/tailwind.css
+/src/styles.css

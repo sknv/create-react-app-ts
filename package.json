@@ -22,6 +22,6 @@
     "build": "npm run tailwind:css && GENERATE_SOURCEMAP=false react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "tailwind:css": "tailwind build src/tailwind.src.css -c tailwind.config.js -o src/tailwind.css"
+    "tailwind:css": "tailwind build src/main.css -o src/styles.css"
   }
 }
