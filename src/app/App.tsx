@@ -13,7 +13,7 @@ export default function App() {
       <Switch>
         <Route path="/" component={IndexPage} exact={true} />
 
-        <ProtectedRoute path="/admin" component={ProtectedApp} />
+        <ProtectedRoute path="/admin" redirectTo="/login" component={ProtectedApp} />
 
         <Route path="*" component={NotFoundPage} />
       </Switch>

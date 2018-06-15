@@ -1,14 +1,20 @@
 import * as React from 'react'
 import { Redirect, Route, RouteComponentProps, RouteProps } from 'react-router-dom'
 
-const redirectUnauthorizedTo = '/login'
+interface IProtectedRouteProps extends RouteProps {
+  redirectTo: string
+}
 
 function isUserLoggedIn() {
   return true
 }
 
-export default function ProtectedRoute({ component, ...props }: RouteProps) {
-  return <Route {...props} render={renderOrRedirect(component)} />
+export default function ProtectedRoute({
+  component,
+  redirectTo,
+  ...props
+}: IProtectedRouteProps) {
+  return <Route {...props} render={renderOrRedirect(component, redirectTo)} />
 }
 
 // ----------------------------------------------------------------------------
@@ -17,14 +23,14 @@ export default function ProtectedRoute({ component, ...props }: RouteProps) {
 
 type Renderer = (props: RouteComponentProps<any>) => React.ReactNode
 
-function renderOrRedirect(Component: any): Renderer {
+function renderOrRedirect(Component: any, redirectTo: string): Renderer {
   return props => {
     return isUserLoggedIn() ? (
       <Component {...props} />
     ) : (
       <Redirect
         to={{
-          pathname: redirectUnauthorizedTo,
+          pathname: redirectTo,
           state: { from: props.location }
         }}
       />
