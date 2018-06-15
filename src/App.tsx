@@ -7,7 +7,7 @@ class App extends React.Component {
   public render() {
     return (
       <div className="text-center">
-        <header className="bg-purple-darker m-6 p-6 rounded">
+        <header className="bg-blue-dark m-6 p-6 rounded">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="text-white">Welcome to React</h1>
         </header>
