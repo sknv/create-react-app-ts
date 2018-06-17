@@ -33,5 +33,6 @@ function userRedirector(): string {
   // if (currentUser.isLoggedIn()) {
   //   return ''
   // }
-  return '/login'
+  // return '/login'
+  return ''
 }
