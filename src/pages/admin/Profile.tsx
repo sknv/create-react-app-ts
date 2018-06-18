@@ -14,7 +14,10 @@ export default function Profle() {
 
   return (
     <Page header="My Profile" actions={actions} back={true}>
-      My Profile page
+      <section className="p-4 border border-grey-light rounded">
+        <h3 className="mb-3">My Profile</h3>
+        Welcome, "My Name"
+      </section>
     </Page>
   )
 }
