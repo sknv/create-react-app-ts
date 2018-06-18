@@ -36,8 +36,21 @@
 * @import "components/forms";
 */
 
+/* Global styles */
+
 a {
-  @apply no-underline;
+  @apply .no-underline;
+}
+
+ol,
+ul {
+  @apply .list-reset;
+}
+
+/* Components */
+
+.menunav a.active {
+  @apply .font-semibold .text-teal-dark;
 }
 
 /**

@@ -1,13 +1,15 @@
 import * as React from 'react'
 
-interface IProps {
+import './App.css'
+
+interface IAppProps {
   children: React.ReactNode
 }
 
-export default function App({ children }: IProps) {
+export default function App({ children }: IAppProps) {
   return (
     <div className="app">
-      {/* Topbar and main sections */}
+      {/* Topbar and Main sections */}
       {children}
 
       {/* <Footerbar /> */}
