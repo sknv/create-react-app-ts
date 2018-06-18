@@ -5,41 +5,48 @@ export default function Menu() {
   return (
     <nav className="menunav">
       <div className="mb-6">
-        <p className="mb-3 text-grey font-bold text-sm">MENU 1</p>
+        <MenuHeader>MENU 1</MenuHeader>
         <ul>
-          <li className="mb-3">
-            <NavLink className="text-grey-dark" to="/admin/item1">
-              Menu Item 1
-            </NavLink>
-          </li>
-          <li className="mb-3">
-            <NavLink className="text-grey-dark" to="/admin/item2">
-              Menu Item 2
-            </NavLink>
-          </li>
+          <MenuLink to="/admin/item1">Menu Item 1</MenuLink>
+          <MenuLink to="/admin/item2">Menu Item 2</MenuLink>
         </ul>
       </div>
 
       <div className="mb-6">
-        <p className="mb-3 text-grey font-bold text-sm">MENU 2</p>
+        <MenuHeader>MENU 2</MenuHeader>
         <ul>
-          <li className="mb-3">
-            <NavLink className="text-grey-dark" to="/admin/item3">
-              Menu Item 3
-            </NavLink>
-          </li>
-          <li className="mb-3">
-            <NavLink className="text-grey-dark" to="/admin/item4">
-              Menu Item 4
-            </NavLink>
-          </li>
-          <li className="mb-3">
-            <NavLink className="text-grey-dark" to="/admin/item5">
-              Menu Item 5
-            </NavLink>
-          </li>
+          <MenuLink to="/admin/item3">Menu Item 3</MenuLink>
+          <MenuLink to="/admin/item4">Menu Item 4</MenuLink>
+          <MenuLink to="/admin/item5">Menu Item 5</MenuLink>
         </ul>
       </div>
     </nav>
+  )
+}
+
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+
+interface IMenuHeaderProps {
+  children: React.ReactNode
+}
+
+function MenuHeader({ children }: IMenuHeaderProps) {
+  return <p className="mb-3 text-grey font-bold text-sm">{children}</p>
+}
+
+interface IMenuLinkProps {
+  to: string
+  children: React.ReactNode
+}
+
+function MenuLink({ to, children }: IMenuLinkProps) {
+  return (
+    <li className="mb-3">
+      <NavLink className="block text-grey-dark hover:text-black" to={to}>
+        {children}
+      </NavLink>
+    </li>
   )
 }

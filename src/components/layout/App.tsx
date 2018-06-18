@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import './App.css'
+import Footer from './Footer'
 
 interface IAppProps {
   children: React.ReactNode
@@ -9,10 +9,8 @@ interface IAppProps {
 export default function App({ children }: IAppProps) {
   return (
     <div className="app">
-      {/* Topbar and Main sections */}
-      {children}
-
-      {/* <Footerbar /> */}
+      {children} {/* Topbar and Main sections */}
+      <Footer />
     </div>
   )
 }

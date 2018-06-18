@@ -49,8 +49,23 @@ ul {
 
 /* Components */
 
+.app {
+  padding-top: 4.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@screen lg {
+  .app {
+    padding-bottom: 0;
+  }
+}
+
 .menunav a.active {
   @apply .font-semibold .text-teal-dark;
+}
+
+.footer a.active {
+  @apply .bg-blue .text-white;
 }
 
 /**

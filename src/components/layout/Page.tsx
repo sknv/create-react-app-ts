@@ -1,7 +1,7 @@
 import * as React from 'react'
 
+import Header from './Header'
 import Main from './Main'
-import Topbar from './Topbar'
 
 interface IPageProps {
   back?: boolean
@@ -13,9 +13,9 @@ interface IPageProps {
 export default function Page({ back, header, actions, children }: IPageProps) {
   return (
     <React.Fragment>
-      <Topbar header={header} back={back}>
+      <Header header={header} back={back}>
         {actions}
-      </Topbar>
+      </Header>
       <Main>{children}</Main>
     </React.Fragment>
   )

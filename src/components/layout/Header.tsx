@@ -10,7 +10,7 @@ interface ITopbarProps {
   children?: React.ReactNode
 }
 
-export default function Topbar({ back, header, children }: ITopbarProps) {
+export default function Header({ back, header, children }: ITopbarProps) {
   return (
     <header className="fixed h-12 pin-t pin-x z-100 flex items-center border-b border-grey-light bg-white py-2">
       <div className="flex items-center container mx-auto px-4">
