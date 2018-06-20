@@ -61,11 +61,11 @@ ul {
 }
 
 .menunav a.active {
-  @apply .font-semibold .text-teal-dark;
+  @apply .font-semibold .text-blue;
 }
 
 .footer a.active {
-  @apply .bg-blue .text-white;
+  @apply .font-semibold .text-blue;
 }
 
 /**
