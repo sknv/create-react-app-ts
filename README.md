@@ -10,6 +10,6 @@ create-react-app-ts is a React application template written on TypeScript.
 
 * [React Router](https://reacttraining.com/react-router)
 
-* [TailwindCSS](https://tailwindcss.com)
+* [Bootstrap](https://getbootstrap.com)
 
 This project was bootstrapped with [Create React App TypeScript](https://github.com/wmonk/create-react-app-typescript).
